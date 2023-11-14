@@ -15,7 +15,6 @@ st.sidebar.header("Exploratory Data Visualization")
 ##########################################################   GET DATA ######################################################### ######
 # one_series_path = "/Users/thomaswynn/Desktop/sleep_kaggle/one_series.csv"
 # series_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/one_series_events.csv"
-# train_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/child-mind-institute-detect-sleep-states/train_events.csv"
 # full_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/child-mind-institute-detect-sleep-states/train_events.csv"
 # full_series_path = "/Users/thomaswynn/Desktop/sleep_kaggle/resampled_train_series.csv"
 # fourier_series_path = "/Users/thomaswynn/Desktop/sleep_kaggle/fourier_series.csv"
@@ -23,13 +22,12 @@ st.sidebar.header("Exploratory Data Visualization")
 
 one_series_path = "one_series.csv"
 series_events_path = "one_series_events.csv"
-#train_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/child-mind-institute-detect-sleep-states/train_events.csv"
 full_events_path = "child-mind-institute-detect-sleep-states/train_events.csv"
 full_series_path = "resampled_train_series.csv"
 fourier_series_path = "fourier_series.csv"
 fourier_events_path = "fourier_labels.csv"
 
-@st.cache_data
+#@st.cache_data
 def get_data(one_series_path, series_events_path, full_events_path, full_series_path) : 
     data = pd.read_csv(one_series_path)
     series_events = pd.read_csv(series_events_path)
