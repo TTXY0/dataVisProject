@@ -1,13 +1,8 @@
 import streamlit as st
-import time
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
-from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
-import graphviz
 from sklearn.datasets import make_blobs
-from sklearn.ensemble import RandomForestClassifier
 st.set_page_config(layout = 'wide', page_title="Random Forest Classifier", page_icon="🌳")
 st.sidebar.header("Random Forest Classifier")
 
@@ -48,7 +43,8 @@ def plot_forest(max_depth=1):
 
 col1, col2 = st.columns([3,1], gap = 'large')
 with col1 : 
-    st.image(f"/Users/thomaswynn/Desktop/sleep_kaggle/rf_{index}.png", output_format="png", width = 1500)
+    st.image(f"rf_{index}.png", output_format="png", width = 1500)
+    # st.image(f"/Users/thomaswynn/Desktop/sleep_kaggle/rf_{index}.png", output_format="png", width = 1500)
 with col2 : 
     st.pyplot(plot_forest(index))
 # def plot_forest_interactive():

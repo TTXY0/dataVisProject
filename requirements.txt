@@ -5,3 +5,5 @@ seaborn
 polars
 streamlit
 pandas
+sklearn.ensemble
+sklearn.datasets

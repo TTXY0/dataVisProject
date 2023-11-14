@@ -1,9 +1,7 @@
 import streamlit as st
 from pandas.api.types import is_datetime64_ns_dtype
-import gc
 import warnings
 import polars as pl
-import time
 import numpy as np
 import pandas as pd
 import altair as alt
@@ -15,13 +13,21 @@ warnings.filterwarnings("ignore")
 st.sidebar.header("Exploratory Data Visualization")
 
 ##########################################################   GET DATA ######################################################### ######
-one_series_path = "/Users/thomaswynn/Desktop/sleep_kaggle/one_series.csv"
-series_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/one_series_events.csv"
-train_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/child-mind-institute-detect-sleep-states/train_events.csv"
-full_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/child-mind-institute-detect-sleep-states/train_events.csv"
-full_series_path = "/Users/thomaswynn/Desktop/sleep_kaggle/resampled_train_series.csv"
-fourier_series_path = "/Users/thomaswynn/Desktop/sleep_kaggle/fourier_series.csv"
-fourier_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/fourier_labels.csv"
+# one_series_path = "/Users/thomaswynn/Desktop/sleep_kaggle/one_series.csv"
+# series_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/one_series_events.csv"
+# train_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/child-mind-institute-detect-sleep-states/train_events.csv"
+# full_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/child-mind-institute-detect-sleep-states/train_events.csv"
+# full_series_path = "/Users/thomaswynn/Desktop/sleep_kaggle/resampled_train_series.csv"
+# fourier_series_path = "/Users/thomaswynn/Desktop/sleep_kaggle/fourier_series.csv"
+# fourier_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/fourier_labels.csv"
+
+one_series_path = "one_series.csv"
+series_events_path = "one_series_events.csv"
+#train_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/child-mind-institute-detect-sleep-states/train_events.csv"
+full_events_path = "child-mind-institute-detect-sleep-states/train_events.csvv"
+full_series_path = "resampled_train_series.csv"
+fourier_series_path = "fourier_series.csv"
+fourier_events_path = "fourier_labels.csv"
 
 @st.cache_data
 def get_data(one_series_path, series_events_path, full_events_path, full_series_path) : 
@@ -143,7 +149,7 @@ dt_transforms = [
    pl.col('timestamp').str.to_datetime().dt.time().alias('time')
 ]
 train_events = (
-   pl.scan_csv(train_events_path)
+   pl.scan_csv(full_events_path)
    .with_columns((dt_transforms))
    .collect()
    .to_pandas()
