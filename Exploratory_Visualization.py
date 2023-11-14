@@ -24,7 +24,7 @@ st.sidebar.header("Exploratory Data Visualization")
 one_series_path = "one_series.csv"
 series_events_path = "one_series_events.csv"
 #train_events_path = "/Users/thomaswynn/Desktop/sleep_kaggle/child-mind-institute-detect-sleep-states/train_events.csv"
-full_events_path = "child-mind-institute-detect-sleep-states/train_events.csvv"
+full_events_path = "child-mind-institute-detect-sleep-states/train_events.csv"
 full_series_path = "resampled_train_series.csv"
 fourier_series_path = "fourier_series.csv"
 fourier_events_path = "fourier_labels.csv"
