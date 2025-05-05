@@ -1,0 +1,1 @@
+# This was a project for my Data Visualization class. I used Streamlit to display my results using a Random Forest Classifier to characterize sleep-onset and sleep-end in this [Kaggle Competition](https://www.kaggle.com/competitions/child-mind-institute-detect-sleep-states)
