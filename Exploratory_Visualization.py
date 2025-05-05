@@ -295,3 +295,4 @@ st.altair_chart((base1 & base2).configure_axis(grid = False,   labelFontSize=20,
 
 
 #progress_bar = st.sidebar.progress(0)
+#`streamlit run /Users/thomaswynn/Desktop/sleep_kaggle/Exploratory_Visualization.py`
